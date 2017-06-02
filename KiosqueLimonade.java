@@ -27,13 +27,7 @@ public class KiosqueLimonade{
           public static final String MSG_ERR_NBVERRE = "Erreur, entrez une valeur positive... Recommencez !";
           public static final String MSG_ERR_FORMAT = "Erreur, format invalide... Recommencez !";
           public static final String MSG_ERR_AJOUT = "Erreur, vous devez entrer O ou N... Recommencez !";
-          public static final String MSG_FIN = "AUREVOIR !";
-          
-
-         
-
-
-           
+          public static final String MSG_FIN = "AUREVOIR !";   
      public static void main(String[] params) {
 
         char reponse;
@@ -47,10 +41,11 @@ public class KiosqueLimonade{
         double totalcentg;
         double totalcent ;
         double totaldollars;
+        double nbverregt;
+        double nbverremt;
+        double nbverrept;
          do{  
-               
-                           
-                            
+             
              System.out.println(MSG_MENU_STARS);
              System.out.printf("%16S\n",MSG_MENU);
              System.out.println(MSG_MENU_STARS);
@@ -60,26 +55,15 @@ public class KiosqueLimonade{
              System.out.println(MSG_CHOIX);
         
              reponse = Clavier.lireCharLn();
-     
              if(reponse > '3'|| reponse < '1'){
                  System.out.println(MSG_ERREUR);
                 }   
-       
-     
-    
-        
+
               if(reponse == '1'){ 
-            
-             
-                            
-            
                 System.out.println(MSG_MENU1_D);
                 System.out.println(MSG_COMMANDE);
                 System.out.println(MSG_MENU1_D);
-            
-       
                         do{
-                  
                             System.out.print(MSG_FORMAT);
             
                             format = Clavier.lireCharLn();
@@ -90,20 +74,13 @@ public class KiosqueLimonade{
                                 format = Character.toUpperCase(format);
                             }
                 
-           
-            
-                
                             if(format == 'P'){
                                 System.out.printf(MSG_NB_VERRE+"PETIT: ");
                                 nbverrep = Clavier.lireDoubleLn();
                                 while (nbverrep < 0){
                                     System.out.println(MSG_ERR_NBVERRE);
                                     nbverrep = Clavier.lireDoubleLn();
-                                }  
-                                
-                                totalcentp = (nbverrep * petit);
-                                
-                 
+                                } 
                             }
                   
                             else if (format =='M'){
@@ -116,9 +93,6 @@ public class KiosqueLimonade{
                                     nbverrem = Clavier.lireDoubleLn();
      
                                 }  
-                                
-                                totalcentm = (nbverrem * moyen);
-                               
                             }
                
                             else if (format =='G') {
@@ -130,16 +104,10 @@ public class KiosqueLimonade{
                                     nbverreg = Clavier.lireDoubleLn();
      
                                 }  
-                               
-                               
-                                
-                                
+
                             } 
-                            
-                              
-                           
-              
-                                System.out.print(MSG_ADD_ITEM);
+
+                            System.out.print(MSG_ADD_ITEM);
                                 additem = Clavier.lireCharLn();
                                 additem = Character.toUpperCase(additem);
                                 
@@ -148,18 +116,13 @@ public class KiosqueLimonade{
                                 additem = Clavier.lireCharLn();
                                 additem = Character.toUpperCase(additem);
                                }
-                        
-                            
+
                         }while( additem != 'N');
                       
                      
                     }           
-                
-                    
-                    
           }while(reponse != '3');
-        
+
           System.out.println(MSG_FIN);
-        
     }
   }
